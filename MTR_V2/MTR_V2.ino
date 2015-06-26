@@ -1,5 +1,5 @@
 /*
-MORSE TRAINER MTR -2
+MORSE TRAINER MTR-2
 
 Morse Output Digital on pin 12
 1000 Hz Tone on Pin 3
