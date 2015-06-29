@@ -1,5 +1,5 @@
 /*
-MORSE TRAINER MTR-2
+MORSE TRAINER MTR -2
 
 Morse Output Digital on pin 12
 1000 Hz Tone on Pin 3
@@ -538,21 +538,20 @@ void setSpeed(float value)	// adjust speed of morse
 
 char generateLetter()	//Random generate letter according its propability (higher propability means letter is generated more often)
 {
-  int ii;
-  int hi;
-  int tot = 0;
+    int _pointer;
+    int _totProbabilities = 0;
+    int _sum = 0;
+    int _index = 0;
 
-  for  (ii = 0; ii <= lastLetter - firstLetter; ii++) tot = tot + charProp[ii]; // tot = sum of all probabilities
+    for  (int _i = 0; _i <= lastLetter - firstLetter; _i++) _totProbabilities = _totProbabilities + charProp[_i]; // _tot = sum of all probabilities
 
-  int sum = 0;
-  hi = random(0, tot);
-  ii = 0;
-  while (sum < hi)
-  {
-    sum = sum + charProp[ii];
-    ii++;
-  }
-  return char(firstLetter + ii - 1);
+    _pointer = random(0, _totProbabilities);
+
+    while (_sum <= _pointer)    {
+        _sum = _sum + charProp[_index];
+        _index++;
+    }
+    return char(firstLetter + _index - 1);
 }
 
 int indexAdv(int index)	//advance queue index by one
