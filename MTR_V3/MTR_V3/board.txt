@@ -1,0 +1,1 @@
+vs-cmd.Debug.AttachtoProcess.tools.openocd.initCmd=-c "init; reset halt"
